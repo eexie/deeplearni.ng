@@ -11,28 +11,16 @@ body {
 	font-weight: 300;
 	padding: 0;
 }
-body.modal-open{
-	overflow:hidden;
-	position:fixed;
-}
+
 p {
 	font-size: 18px;
 	line-height: 1.7;
-	margin-bottom: 10px;
-}
-a {
-	color:#e22730;
-	transition: color 0.3s ease;
-}
-.organismBody a:focus{
-	outline:none;
-	color:#e22730;
-	text-decoration: none;
+	margin-bottom: 24px;
 }
 
 .navbar {
 	margin: 0;
-	background-color: #e22730;
+	background-color: #E02B37;
 	border-radius: 0;
 	text-align: center;
 	width: 100%;
@@ -40,15 +28,6 @@ a {
 	border: none;
 	margin-bottom: 10%;
 	min-height: 40px;
-}
-.topNav{
-	position:fixed; 
-	top:0;
-	
-	background-color:#062132; 
-	width:100%; 
-	z-index: 1;
-	text-align:center;
 }
 
 .navbar .container {
@@ -68,28 +47,28 @@ a {
 	border: none;
 }
 
-.mainHeader {
+#mainHeader {
 	margin: 0;
-	background-color: #e22730;
+	background-color: #E02B37;
 	text-align: center;
 	padding-bottom: 15%;
 	min-height: 480px;
 	position: relative;
-	padding-top:20%; 
-	margin-bottom:30%;
+	padding-top: 100px;
 }
+
 .spacer {
 	height: 100px;
 }
 
-/*#contentBody {
+#contentBody {
 	position: relative;
 	min-height: 3500px;
 }
-*/
+
 canvas {
 	position: absolute;
-	top: 480px;
+	top: 0;
 	z-index: -1;
 }
 
@@ -104,7 +83,7 @@ h1 {
 
 .darkBack {
 	background-color: #002133;
-	padding: 0 32px;
+	padding: 12px 32px;
 	display: inline-block;
 }
 
@@ -113,7 +92,6 @@ h1 {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding-bottom:3%;
 }
 
 #mainlogo {
@@ -135,8 +113,8 @@ a#mainLogo img {
 
 #mainNav {
 	list-style-type: none;
-	margin:auto;
-	
+	float: right;
+	margin: 0 !important;
 	padding: 0;
 }
 
@@ -145,9 +123,9 @@ a#mainLogo img {
 	display: inline-block;
 	color: #f7fbfe;
 	vertical-align: middle;
-	height: 50px;
+	height: 80px;
 	width: 100px;
-	line-height: 50px;
+	line-height: 80px;
 	transition: all 0.3s ease;
 }
 
@@ -164,14 +142,14 @@ a:hover {
 #mainNav li {
 	display: inline-block;
 	padding: 0 20px;
-	
+	line-height: 80px;
 	font-size: 14px;
 	text-transform: uppercase;
 	vertical-align: middle;
 }
 
 .btn-main {
-	background-color: #e22730;
+	background-color: #004c65;
 	border-radius: 0;
 	color: #f7fbfe;
 	border: 0;
@@ -241,10 +219,10 @@ a:hover {
 }
 
 .organismBody {
-	max-width: 640px;
+	max-width: 650px;
 	margin: auto;
 	background-color: rgba(238, 242, 244, 0.5);
-	padding: 30px;
+	padding: 40px;
 }
 
 .organismAction {
@@ -253,15 +231,13 @@ a:hover {
 	margin-bottom: 5%;
 }
 
-.footer {
-	
+#footer {
+	margin-top: 20%;
 	background-color: #E02B37;
 	padding: 20px;
-	margin:0;
-	
 }
 
-.footer p {
+#footer p {
 	font-size: 14px;
 	color: #f7fbfe;
 }
@@ -297,52 +273,39 @@ a:hover {
 	margin-top: 50px;
 }
 
-#notfound .footer {
+#notfound #footer {
 	position: relative;
 	bottom: 0;
 }
 
-#intro .container img{
-		height:80px;
-}
-@media screen and (max-width: 998px) {
 
+@media screen and (max-width: 998px) {
 	#mainNav a li {
 	height: 60px;
 	width: 80px;
 	line-height: 60px;
 	font-size: 12px;
-	}
-	/*#intro .container img{
-		height:80px;
-	}*/
-	#intro .container img{
-		height:90%;
 	}
 
 	h1, h2, h3 {
 		font-size: 22px;
 	}
 
-	.mainHeader{
+	#mainHeader {
 	padding-bottom: 10%;
-	padding-top: 300px;
+	min-height: 440px;
+}
 
-	}
-	canvas{
-		top:480px;
-	}
-
-	/*#contentBody {
-		min-height: 3000px;
-	}*/
+#contentBody {
+	min-height: 3000px;
+}
 }
 
 @media screen and (max-width: 640px) {
 	.navbar .container {
 	padding: 0;
 	}
-	
+
 	#mainNav a li {
 	padding: 0;
 	height: 60px;
@@ -350,9 +313,6 @@ a:hover {
 	line-height: 60px;
 	font-size: 12px;
 	}
-	/*#intro .container img{
-		height:50px;
-	}*/
 
 	h1, h2, h3 {
 		font-size: 22px;
@@ -366,34 +326,28 @@ a:hover {
 	margin: auto;
 	display: inline;
 	transition: all 0.3s ease;
-	}
+}
 
-	.mainHeader {
-		padding-bottom: 10%;
-		padding-top: 400px;
-	}
-	canvas{
-		top:480px;
-	}
+#mainHeader {
+	padding-bottom: 10%;
+	min-height: 400px;
+}
 
-	.darkBack {
-		background-color: #002133;
-		padding: 10px 28px;
-		display: inline-block;
-	}
-	/*#contentBody {
-		min-height: 2800px;
-	}*/
-
+.darkBack {
+	background-color: #002133;
+	padding: 10px 28px;
+	display: inline-block;
+}
+#contentBody {
+	min-height: 2800px;
+}
 }
 
 @media screen and (max-width: 420px) {
 	.navbar .container {
 	padding: 0;
 	}
-	#header img{
-		margin:0 10%;
-	}
+
 	#mainNav a li {
 	padding: 0;
 	height: 40px;
@@ -408,9 +362,6 @@ a:hover {
 	p {
 	font-size: 16px;
 	}
-	/*#intro .container img{
-		height:50px;
-	}*/
 
 	.affix #mainNav a li {
 	height: 40px;
@@ -418,80 +369,22 @@ a:hover {
 	border: none;
 	}
 
-	.mainHeader {
+	#mainHeader {
 	padding-bottom: 20%;
-	padding-top: 360px;
+	min-height: 360px;
 	}
-	canvas{
-		top:480px;
-	}
+
 	.darkBack {
 	background-color: #002133;
 	padding: 8px 18px;
 	display: inline-block;
+}
+
+.organismHead {
+	max-width: 100px;
 	}
 
-	.organismHead {
-		max-width: 100px;
-		}
-
-	/*#contentBody {
-		min-height: 2600px;
-	}*/
+#contentBody {
+	min-height: 2600px;
 }
-/*#intro .container img{
-		height:80px;
-}*/
-.modal-header{
-	background-color:#e22730;
-	color:#fff;
-
-}
-.modal-dialog{
-	margin:50px auto;
-}
-.modal-title{
-	font-size:26px;
-	text-transform: lowercase;
-}
-.modal-body span{
-	font-size:18px;
-	font-weight:600;
-	color:#002133;
-}
-.modal-body li::before{
-	color:#E02B37;
-	content: '\2022';
-	/* For a square bullet */
-	/*content:'\25A0';*/
-	display: block;
-	position: relative;
-	max-width: 0;
-	max-height: 0;
-	left: -10px;
-	top: 0;
-	font-size:20px;
-}
-.modal-body li{
-	list-style:none;
-	color:#333;
-	font-size:18px;
-}
-.modal-body li p{
-	line-height:1.7;
-}
-.close{
-	opacity:1;
-	color:#fff;
-	text-shadow: none;
-	transition:color 0.3s ease;
-	font-size:28px;
-	
-}
-.modal-close{
-	margin-left:10px;
-}
-.modal-header .close{
-	margin-top:2px;
-	outline:none;
 }

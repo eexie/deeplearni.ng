@@ -1,172 +1,428 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>We are building a universal super intelligence</title>
-        <meta name="description" content="DeepLearni.ng is growing articial intelligence in Toronto, Canada.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    </head>
-    <body>
-    <div id="mainHeader" class="mainHeader">
-      <nav class="navbar" role="navigation" data-spy="affix" data-offset-top="100">
-        <div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>We are building a universal super intelligence</title>
+    <meta name="description" content="DeepLearni.ng is growing articial intelligence in Toronto, Canada.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/jquery.unveil.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <!-- Control for lazyloading, the integer is the amount of pixels *before* image to start load (to prevent jumping) -->
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-70081252-1', 'auto');
+        ga('set', 'mission', '/index.html/#mission');
+        ga('set', 'careers', '/index.html/#careers');
+        ga('send', 'pageview');
+    </script>   
+
+
+    <script>
+
+      $(document).ready(function() {
+            var app = new Animate();
+            app.initialize();
+          $('#header').hide();
+          
+          $('#contentBody').fullpage({
+
+            anchors: ['mainHeader', 'mission', 'careers', 'contact', 'footer'],
+            menu: '#mainNav',
+            scrollingSpeed: 1000,
+            touchSensitivity: 100,
+            // scrollOverflow:true,
+            
+            normalScrollElements: '#job1, #job2, #job3  ',
+            onLeave: function(index, nextIndex, direction){
+                 var leavingSection = $(this);
+                //after leaving section 2
+                if(index == 1 && direction =='down'){
+                    // alert("Going to section 3!");
+                    $('#header').fadeIn();
+                }
+                else if(index == 2 && direction == 'up' || nextIndex==1){
+                    $('#header').fadeOut();
+                }
+
+            }
+            
+          });
+            // $.fn.fullpage.setAutoScrolling(false);
+            if($(window).width() < 480) { 
+                // alert("mobile");
+                $.fn.fullpage.setAutoScrolling(false);
+            }
+            
+            window.onresize= function(){
+                if($(window).width() < 480) { 
+                // alert("mobile");
+                $.fn.fullpage.setAutoScrolling(false);
+                }
+                else{
+                    // alert("not mobile");
+                    $.fn.fullpage.setAutoScrolling(true);
+                }
+            }
+            
+          // $(document).on('click', '#viewJobs', function(){
+          //     $.fn.fullpage.moveSlideRight();
+          //   });
+          // $(document).on('click', '#back', function(){
+          //     $.fn.fullpage.moveSlideLeft();
+          //   });
+      });
+      
+    </script>
+    
+        
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    
+    <!--<div class="container topNav"id ="header" role="navigation">
+        <div class="row">
+            <div class="col-md-4  col-md-push-4">
+                <a href="#mainHeader"><img src="img/deeplearning-logo.png" alt="DeepLearni.ng" height="50px"></a>
+            </div>
+            <div class="col-md-4 col-xs-6 col-md-pull-4">
+                <ul id="mainNav" >
+                    <a href="#mission">
+                    <li>
+                     Mission
+                    </li>
+                  </a>
+                  <a href="#careers">
+                    <li>
+                      Careers
+                    </li>
+                  </a>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 col-xs-6">
+                <ul id="mainNav">
+                    <a href="#board">
+                        <li>
+                         Board
+                        </li>
+                    </a>
+                    <a href="#contact">
+                        <li>
+                        Contact
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+    <nav class="navbar" data-spy="affix" >
+        <div class="container"id ="header" role="navigation">
           <a id="mainLogo" href="#mainHeader">
             <img src="img/deeplearning-logo.png" alt="DeepLearni.ng">
           </a>
-          <ul id="mainNav" style="float:left;">
+          <ul id="mainNav" style="float:right">
             <a href="#mission">
-            <li>
-             Mission
-            </li>
-          </a>
-          <a href="#careers">
-            <li>
-              Careers
-            </li>
-          </a>
-        </ul>
-          <ul id="mainNav">
-            <a href="#mission">
-            <li>
-             Board
-            </li>
-          </a>
-          <a href="#contact">
-            <li>
-              Contact
-            </li>
-          </a>
+                <li>
+                Mission
+                </li>
+            </a>
+            <a href="#careers">
+                <li>
+                Careers
+                </li>
+            </a>
+            <a href="#contact">
+                <li>
+                  Contact
+                </li>
+            </a>
         </ul>
       </div>
-      </nav>
-      <div class="container">
-        <div id="intro">
-          <h1><span class="darkBack">We are growing intelligence</span><br><span class="darkBack">and inventing new solutions in finance</span></h1>
-          <div>
-          <a class="btn btn-main btn-lg" href="#mission" role="button">Learn more &raquo;</a>
-        </div>
-        </div>
-      </div>
-    </div>
+    </nav>
+    
+  
     <div id="contentBody">
-      <canvas id='canvas'></canvas>
-      <script src="js/bowser.js"></script>
-      <script src="js/canvasAnimate.js"></script>
-      <div class="organismBox">
-      <div id="mission" class="container">
-        <div class="organismHead organism">
-          <img src="img/bg.gif" data-src="img/mission-pattern-dark.gif" class="img-responsive">
-          <h3>We are<span class="colon"></span></h3>
+        <canvas id='canvas' style="top:"></canvas>
+        <script src="js/bowser.js"></script>
+        <script src="js/canvasAnimate.js"></script>
+
+        <div id="section0" class="mainHeader section fp-auto-height">
+          
+        <div class="container">
+            <div id="intro">
+                <!--<div class="container" style="margin-bottom:5%;">
+                    <div class="row">
+                        <div class="col-md-4  col-md-push-4">
+                            <img src="img/deeplearning-logo.png" alt="DeepLearni.ng" height="50px">
+                        </div>
+                        <div class="col-md-4 col-xs-6 col-md-pull-4">
+                            <ul id="mainNav" style="margin-top:3%;">
+                                <a href="#mission">
+                                <li>
+                                 Mission
+                                </li>
+                              </a>
+                              <a href="#careers">
+                                <li>
+                                  Careers
+                                </li>
+                              </a>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-md-4 col-xs-6">
+                            <ul id="mainNav" style="margin-top:3%;">
+                                <a href="#board" >
+                                <li>
+                                 Board
+                                </li>
+                              </a>
+
+                              <a href="#contact">
+                                <li>
+                                  Contact
+                                </li>
+                              </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>-->
+                <nav class="navbar" data-spy="affix" style="margin-top:100px;" >
+                    <div class="container" role="navigation">
+                      <a id="mainLogo" href="#mainHeader">
+                        <img src="img/deeplearning-logo.png" alt="DeepLearni.ng">
+                      </a>
+                      <ul id="mainNav" style="float:right">
+                        <a href="#mission">
+                            <li>
+                            Mission
+                            </li>
+                        </a>
+                        <a href="#careers">
+                            <li>
+                            Careers
+                            </li>
+                        </a>
+                        <a href="#contact">
+                            <li>
+                              Contact
+                            </li>
+                        </a>
+                    </ul>
+                  </div>
+                </nav>
+                <h1><span class="darkBack">We are growing intelligence</span><br><span class="darkBack">and inventing new solutions in finance</span></h1>
+                <div>
+                    <a class="btn btn-main btn-lg" href="#mission" role="button">Learn more &raquo;</a>
+                </div>
+            </div>
+          </div>
         </div>
-        <div class="organismShoulder organism">
-          <h2><span class="redBack">pushing the boundaries of artificial intelligence</span></h2>
+        
+        <div class="container section" id="section1" >
+            <div class="organismHead organism">
+                <img src="img/bg.gif" data-src="img/mission-pattern-dark.gif" class="img-responsive">
+                <h3>We are<span class="colon"></span></h3>
+            </div>
+            <div class="organismShoulder organism">
+                <h2><span class="redBack">pushing the boundaries of artificial intelligence</span></h2>
+            </div>
+            <div class="organismBody organism">
+                <p>We train deep neural networks on financial datasets to classify, recommend and predict.</p>
+                <p>Our team works in a quick, self-directed environment to produce universal solutions in finance.</p>
+            </div>
+            <div class="organismAction organism">
+                <a class="btn btn-main btn-lg" href="#careers" role="button">Join our team &raquo;</a>
+            </div>
         </div>
-        <div class="organismBody organism">
-          <p>We train deep neural networks on financial datasets to classify, recommend and predict.</p>
-          <p>Our team works in a quick, self-directed environment to produce universal solutions in finance.</p>
+        
+        
+        <div class="container-fluid section" id="section2">
+            <div class="organismHead organism">
+                <img src="img/bg.gif" data-src="img/careers-pattern-dark.gif" class="img-responsive">
+                <h3>We are<span class="colon"></span></h3>
+            </div>
+            <div class="organismShoulder organism">
+                <h2><span class="redBack">cultivating a team of talented people</span></h2>
+            </div>
+            <div class="organismBody organism" >
+                <p>We're looking for the brightest minds in artificial intelligence to combine their skills with ours.</p>
+                <p>If you are eager to create new solutions, capable of self-directed deep-dives into research and development, and are willing to work in a close, collaborative space, feel free to send us your details.</p>
+                <p> We're currently hiring: </p>
+                <h4><a href="#" data-toggle="modal" data-target="#job1">Job 1 &nbsp;&nbsp;</a> <a href="#" data-toggle="modal" data-target="#job2">Job 2 &nbsp;&nbsp;</a> <a href="#" data-toggle="modal" data-target="#job3">Job 3 &nbsp;&nbsp;</a>  </h4>
+            </div>
+            <div class="organismAction organism">                    
+                <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a>
+            </div>
+            
         </div>
-        <div class="organismAction organism">
-          <a class="btn btn-main btn-lg" href="#careers" role="button">Join our team &raquo;</a>
+        <!--<div class="container section" id="section3">
+            <div class="organismHead organism">
+                <img src="img/bg.gif" data-src="img/board-pattern-dark.gif" class="img-responsive">
+                <h3>We are<span class="colon"></span></h3>
+            </div>
+            <div class="organismShoulder organism">
+                <h2><span class="redBack">supported by...</span></h2>
+            </div>
+            <div class="organismBody organism" style="text-align:center">
+                <p>As seen in:</p>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                        <a href="http://www.bloomberg.com/news/articles/2015-12-17/google-raids-threaten-canada-s-lead-in-artificial-intelligence"><img src="img/BloombergLogo.png" class="img-responsive center-block"></a><br>
+                        <a href="http://business.financialpost.com/entrepreneur/fp-startups/brain-drain-threatens-canadas-dominance-in-artificial-intelligence-we-are-losing-our-top-talent/"><img src="img/FinancialPostLogo.png" class="img-responsive center-block"></a><br>
+                    </div>
+                    <div class="col-xs-6"
+                        <a href="http://www.theglobeandmail.com/technology/tech-news/canada-risks-losing-its-lead-in-artificial-intelligence-to-silicon-valley/article27810747/"><img src="img/GlobeMailLogo.png" class="img-responsive center-block"></a><br>
+                        <a href="http://www.chicagotribune.com/news/sns-wp-blm-canada-tech-3a06c576-a4b6-11e5-8318-bd8caed8c588-20151217-story.html"><img src="img/ChicagoTribuneLogo.png" class="img-responsive center-block"></a><br>
+                    </div>
+                </div>
+            </div>
+            <div class="organismAction organism">
+                <a class="btn btn-main btn-lg" href="mailto:contact@deeplearni.ng"  onclick=”javascript:pageTracker._trackPageview (EmailClick);” role="button">Get in touch &raquo;</a>
+            </div>
+        </div>-->
+        <div class="container section" id="section4">
+            <div class="organismHead organism">
+                <img src="img/bg.gif" data-src="img/location-pattern-dark.gif" class="img-responsive">
+                <h3>We are<span class="colon"></span></h3>
+            </div>
+            <div class="organismShoulder organism">
+                <h2><span class="redBack">proudly rooted in Toronto, Canada</span></h2>
+            </div>
+            <div class="organismBody organism" style="text-align:center">
+                <p>As seen in:</p>
+                <div class="row">
+                    <div class="col-xs-6">
+                        
+                        <a href="http://www.bloomberg.com/news/articles/2015-12-17/google-raids-threaten-canada-s-lead-in-artificial-intelligence"><img src="img/BloombergLogo.png" class="img-responsive center-block"></a><br>
+                        <a href="http://business.financialpost.com/entrepreneur/fp-startups/brain-drain-threatens-canadas-dominance-in-artificial-intelligence-we-are-losing-our-top-talent/"><img src="img/FinancialPostLogo.png" class="img-responsive center-block"></a><br>
+                    </div>
+                    <div class="col-xs-6"
+                        <a href="http://www.theglobeandmail.com/technology/tech-news/canada-risks-losing-its-lead-in-artificial-intelligence-to-silicon-valley/article27810747/"><img src="img/GlobeMailLogo.png" class="img-responsive center-block"></a><br>
+                        <a href="http://www.chicagotribune.com/news/sns-wp-blm-canada-tech-3a06c576-a4b6-11e5-8318-bd8caed8c588-20151217-story.html"><img src="img/ChicagoTribuneLogo.png" class="img-responsive center-block"></a><br>
+                    </div>
+                </div>
+            </div>
+            <div class="organismAction organism">
+                <a class="btn btn-main btn-lg" href="mailto:contact@deeplearni.ng"  onclick=”javascript:pageTracker._trackPageview (EmailClick);” role="button">Get in touch &raquo;</a>
+            </div>
         </div>
+
+
+        <div class="footer container section fp-auto-height" id="section5" >
+            <div class="container">
+                <p>©2016 DeepLearni.ng, All Rights Reserved</p>
+            </div>
+        </div>
+        
+    </div>   
+
+    <div id="job2" class="modal fade" role="dialog"data-backdrop="static">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Job 2 title</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" type="button" data-dismiss="modal">Close</a>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="organismBox">
-      <div id="careers" class="container">
-        <div class="organismHead organism">
-          <img src="img/bg.gif" data-src="img/careers-pattern-dark.gif" class="img-responsive">
-          <h3>We are<span class="colon"></span></h3>
+    <div id="job3" class="modal fade" role="dialog"data-backdrop="static">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Job 3 title</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" type="button" data-dismiss="modal">Close</a>
+          </div>
         </div>
-        <div class="organismShoulder organism">
-          <h2><span class="redBack">cultivating a team of talented people</span></h2>
-        </div>
-        <div class="organismBody organism">
-          <p>We're looking for the brightest minds in artificial intelligence to combine their skills with ours.</p>
-          <p>If you are eager to create new solutions, capable of self-directed deep-dives into research and development, and are willing to work in a close, collaborative space, feel free to send us your details.</p>
-        </div>
-        <div class="organismAction organism">
-          <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a>
-        </div>
+
       </div>
     </div>
-    <div class="organismBox">
-      <div id="contact" class="container">
-        <div class="organismHead organism">
-          <img src="img/bg.gif" data-src="img/location-pattern-dark.gif" class="img-responsive">
-          <h3>We are<span class="colon"></span></h3>
+    <!-- Modals-->
+    <div id="job1" class="modal fade" role="dialog" data-backdrop="static">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Deep Software Engineering Lead </h4>
+          </div>
+          <div class="modal-body">
+            <p>The Deep Software Engineering Lead leads a team of software engineers to create high quality machine learning enterprise software systems. Not only will you code but you will manage others who code. As a Lead you will manage project goals, take charge of large scale software architecture, and enforce strong software engineering processes. </p>
+
+            <span> <br>Responsibilities </span>
+            <ul>
+                <li><p>Ensure the highest standard of product quality and reliability.</li>
+                <li><p>Drive technical projects and provide leadership.</li>
+                <li><p>Take responsibility for the overall planning, execution and success of complex technical projects.</li>
+                <li><p>Contribute technically to projects.</li>
+                <li><p>Work with external parties to ensure interoperability.</li>
+                <li><p>Take charge of task planning and code reviews.</li>
+            </ul>
+
+            <span> <br>Qualifications </span>
+            <ul>
+                <li><p>Hands-on technical leadership and people management experience.</li>
+                <li><p>Successfully built large-scale enterprise or mission critical products.</li>
+                <li><p>Experience in leading large cutting edge, technically-challenging, cross-functional software projects from inception to delivery.</li>
+            </ul>
+
+            <span> <br>Company Description </span>
+            <p>DeepLearni.ng creates high end software products for banks.
+            We use cutting edge machine learning to change the face of finance.
+            We work on huge, world changing challenges and strive for perfection in our solutions.</p>
+
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng?subject=Deep Software Engineering Lead"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a> 
+            <a href="#" type="button" data-dismiss="modal" class="modal-close" >Close</a>
+          </div>
         </div>
-        <div class="organismShoulder organism">
-          <h2><span class="redBack">proudly rooted in Toronto, Canada</span></h2>
-        </div>
-        <div class="organismBody organism">
-          <p>As seen in:</p>
-          <a href="http://www.bloomberg.com/news/articles/2015-12-17/google-raids-threaten-canada-s-lead-in-artificial-intelligence"><img src="img/BloombergLogo.png" class="img-responsive center-block"></a><br>
-          <a href="http://business.financialpost.com/entrepreneur/fp-startups/brain-drain-threatens-canadas-dominance-in-artificial-intelligence-we-are-losing-our-top-talent/"><img src="img/FinancialPostLogo.png" class="img-responsive center-block"></a><br>
-          <a href="http://www.theglobeandmail.com/technology/tech-news/canada-risks-losing-its-lead-in-artificial-intelligence-to-silicon-valley/article27810747/"><img src="img/GlobeMailLogo.png" class="img-responsive center-block"></a><br>
-          <a href="http://www.chicagotribune.com/news/sns-wp-blm-canada-tech-3a06c576-a4b6-11e5-8318-bd8caed8c588-20151217-story.html"><img src="img/ChicagoTribuneLogo.png" class="img-responsive center-block"></a><br>
-        </div>
-        <div class="organismAction organism">
-          <a class="btn btn-main btn-lg" href="mailto:contact@deeplearni.ng"  onclick=”javascript:pageTracker._trackPageview (EmailClick);” role="button">Get in touch &raquo;</a>
-        </div>
-      </div>
     </div>
-    <div class="footer">
-      <div class="container">
-        <p>©2015 DeepLearni.ng, All Rights Reserved</p>
-      </div>
-    </div>
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+    
+  
 
-        <script src="js/main.js"></script>
-        <script src="js/jquery.unveil.js"></script>
-
-        <!-- Control for lazyloading, the integer is the amount of pixels *before* image to start load (to prevent jumping) -->
-        <script>
-        $(document).ready(function() {
-        $("img").unveil(100);
-        });
-        </script>
-        <!-- Google Analytics -->
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-70081252-1', 'auto');
-          ga('set', 'mission', '/index.html/#mission');
-          ga('set', 'careers', '/index.html/#careers');
-          ga('send', 'pageview');
-          </script>
-        <script>
-          $(function() {
-            $('a[href*="#"]:not([href="#"])').click(function() {
-              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                  $('html, body').animate({
-                    scrollTop: target.offset().top
-                  }, 
-                  1000);
-                  return false;
-                }
-              }
-            });
-          });
-        </script>
-    </body>
+</body> 
 </html>

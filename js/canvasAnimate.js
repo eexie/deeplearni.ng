@@ -27,7 +27,7 @@ function Animate() {
     context = canvas.getContext('2d');
 
     width = document.getElementById('contentBody').offsetWidth
-    height = 10000
+    height = document.getElementById('contentBody').offsetHeight
 
     oX = width / 2;
     oY = 0;
@@ -212,31 +212,18 @@ function Animate() {
       var colour;
 
       var randomColour = function() {
-      // if (hour <2) {
-      //   colour = "110, 14, 61,"
-      // }  else if (hour <4) {
-      //   colour = "159, 29, 80,"
-      // }  else if (hour <6) {
-      //   colour = "33, 121, 128,"
-      // }  else if (hour <8) {
-      //   colour = "0, 166, 149,"
-      // }  else if (hour <10) {
-      //   colour = "0, 217, 192,"
-      // }  else {
-      //   colour = "247, 200, 122,"
-      // }  
       if (hour <2) {
-        colour = "226, 39, 48,"
+        colour = "110, 14, 61,"
       }  else if (hour <4) {
-        colour = "6, 33, 50,"
+        colour = "159, 29, 80,"
       }  else if (hour <6) {
-        colour = "234, 237, 241,"
+        colour = "33, 121, 128,"
       }  else if (hour <8) {
-        colour = "234, 237, 241,"
+        colour = "0, 166, 149,"
       }  else if (hour <10) {
-        colour = "6, 33, 50,"
+        colour = "0, 217, 192,"
       }  else {
-        colour = "212, 218, 224,"
+        colour = "247, 200, 122,"
       }  
       }
       randomColour();
