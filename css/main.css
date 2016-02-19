@@ -455,15 +455,30 @@ a:hover {
 	text-transform: lowercase;
 }
 .modal-body span{
-	font-size:26px;
-	color:#E02B37;
+	font-size:18px;
+	font-weight:600;
+	color:#002133;
 }
 .modal-body li::before{
 	color:#E02B37;
+	content: '\2022';
+	/* For a square bullet */
+	/*content:'\25A0';*/
+	display: block;
+	position: relative;
+	max-width: 0;
+	max-height: 0;
+	left: -10px;
+	top: 0;
+	font-size:20px;
 }
 .modal-body li{
+	list-style:none;
 	color:#333;
 	font-size:18px;
+}
+.modal-body li p{
+	line-height:1.7;
 }
 .close{
 	opacity:1;
@@ -472,4 +487,11 @@ a:hover {
 	transition:color 0.3s ease;
 	font-size:28px;
 	
+}
+.modal-close{
+	margin-left:10px;
+}
+.modal-header .close{
+	margin-top:2px;
+	outline:none;
 }
