@@ -448,14 +448,14 @@ a:hover {
 
 }
 .modal-dialog{
-	margin:50px auto;
+	margin:60px auto;
 }
 .modal-title{
 	font-size:26px;
 }
 .modal-body span{
 	font-size:18px;
-	color:#E02B37;
+	color:#e22730;
 	font-weight: 600;
 }
 .modal-body li::before{
