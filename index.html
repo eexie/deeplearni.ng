@@ -17,7 +17,7 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
     
     <script src="js/main.js"></script>
     <script src="js/jquery.unveil.js"></script>
@@ -40,7 +40,7 @@
 
 
     <script>
-
+    var isPhoneDevice = "ontouchstart" in document.documentElement; 
       $(document).ready(function() {
             var app = new Animate();
             app.initialize();
@@ -52,7 +52,7 @@
             menu: '#mainNav',
             scrollingSpeed: 1000,
             touchSensitivity: 100,
-            // scrollOverflow:true,
+            scrollOverflow:true,
             
             normalScrollElements: '#job1, #job2, #job3  ',
             onLeave: function(index, nextIndex, direction){
@@ -100,7 +100,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
-<body>
+<body style="overflow:hidden">
     
     <!--<div class="container topNav"id ="header" role="navigation">
         <div class="row">
@@ -165,7 +165,8 @@
     
   
     <div id="contentBody">
-        <canvas id='canvas' style="top:"></canvas>
+        <div id = "content"style="overflow:hidden;">
+        <canvas id='canvas' style="overflow:hidden;"></canvas>
         <script src="js/bowser.js"></script>
         <script src="js/canvasAnimate.js"></script>
 
@@ -271,11 +272,12 @@
             <div class="organismBody organism" >
                 <p>We're looking for the brightest minds in artificial intelligence to combine their skills with ours.</p>
                 <p>If you are eager to create new solutions, capable of self-directed deep-dives into research and development, and are willing to work in a close, collaborative space, feel free to send us your details.</p>
-                <p> We're currently hiring: </p>
-                <h4><a href="#" data-toggle="modal" data-target="#job1">Software Engineering Lead &nbsp;&nbsp;</a> 
+                <p> <b>We're currently hiring: </b></p>
+                <p><a href="#" data-toggle="modal" data-target="#job1">Software Engineering Lead &nbsp;&nbsp;</a> <br/>
+                    <a href="#" data-toggle="modal" data-target="#job2">Creative Developer Intern / Co-op  &nbsp;&nbsp;</a> 
                     <!--<a href="#" data-toggle="modal" data-target="#job2">Job 2 &nbsp;&nbsp;</a> 
                     <a href="#" data-toggle="modal" data-target="#job3">Job 3 &nbsp;&nbsp;</a> -->
-                 </h4>
+                 </p>
             </div>
             <div class="organismAction organism">                    
                 <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a>
@@ -319,15 +321,15 @@
             <div class="organismBody organism" style="text-align:center">
                 <p>As seen in:</p>
                 <div class="row">
-                    <div class="col-xs-6">
+                    <!--<div class="col-xs-6">-->
                         
                         <a href="http://www.bloomberg.com/news/articles/2015-12-17/google-raids-threaten-canada-s-lead-in-artificial-intelligence"><img src="img/BloombergLogo.png" class="img-responsive center-block"></a><br>
                         <a href="http://business.financialpost.com/entrepreneur/fp-startups/brain-drain-threatens-canadas-dominance-in-artificial-intelligence-we-are-losing-our-top-talent/"><img src="img/FinancialPostLogo.png" class="img-responsive center-block"></a><br>
-                    </div>
-                    <div class="col-xs-6"
+                    <!--</div>
+                    <div class="col-xs-6">-->
                         <a href="http://www.theglobeandmail.com/technology/tech-news/canada-risks-losing-its-lead-in-artificial-intelligence-to-silicon-valley/article27810747/"><img src="img/GlobeMailLogo.png" class="img-responsive center-block"></a><br>
-                        <a href="http://www.chicagotribune.com/news/sns-wp-blm-canada-tech-3a06c576-a4b6-11e5-8318-bd8caed8c588-20151217-story.html"><img src="img/ChicagoTribuneLogo.png" class="img-responsive center-block"></a><br>
-                    </div>
+                        <br>
+                    <!--</div>-->
                 </div>
             </div>
             <div class="organismAction organism">
@@ -336,14 +338,14 @@
         </div>
 
 
-        <div class="footer container section fp-auto-height" id="section5" >
+        <div class="footer container section fp-auto-height" id="section5" style="max-height:73px;">
             <div class="container">
                 <p>©2016 DeepLearni.ng, All Rights Reserved</p>
             </div>
         </div>
         
     </div>   
-
+    </div>
     <div id="job2" class="modal fade" role="dialog"data-backdrop="static">
       <div class="modal-dialog">
 
@@ -351,12 +353,39 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Job 2 title</h4>
+            <h4 class="modal-title">Creative Developer Intern / Co-op   </h4>
           </div>
           <div class="modal-body">
-            <p>Some text in the modal.</p>
+            <p>You will get to experience what it is like to work in a world class startup. You will work on a diverse mix of projects: creative design, research and development, code validation and testing. By joining DeepLeani.ng you will see the immediate impact of your work and contribute to an exciting and growing industry.</p>
+
+            <span> <br>Responsibilities </span>
+            <ul>
+                <li><p>Apply best practices for efficient and effective development; look for opportunities to streamline and fully utilize current and new technological solutions</li>
+                
+                <li><p>Work closely with software developers to ensure projects are delivered on time and of the highest quality</li>
+                <li><p>Stay current on relevant technology, conduct necessary research and testing to assess emerging technology options</li>
+                <li><p>Interpret data and analyze results using statistical techniques</li>
+            </ul>
+
+            <span> <br>Qualifications </span>
+            <ul>
+                <li><p>Programming experience</li>
+                <li><p>Knowledge of Python, Git, JavaScript, or the ability to learn them quickly</li>
+                <li><p>Content creation and digital design skills</li>
+                <li><p>A desire to learn and understand complex problems</li>
+                <li><p>Independent and self-motivated</li>
+                <li><p>Meticulous and have a strong eye for detail</li>
+            </ul>
+            <span> <br>Preferred Qualifications </span>
+            <ul>
+                <li><p>Web development</li>
+                <li><p>Social media management</li>
+                <li><p>Experience working with AWS</li>
+                <li><p>Knowledge of general QA procedures and methodologies as well as software development fundamentals</li>
+            </ul>
           </div>
           <div class="modal-footer">
+            <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng?subject=Creative Developer Intern"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a> 
             <a href="#" type="button" data-dismiss="modal">Close</a>
           </div>
         </div>
@@ -382,39 +411,40 @@
 
       </div>
     </div>
+
     <!-- Modals-->
     <div id="job1" class="modal fade" role="dialog" data-backdrop="static">
-      <div class="modal-dialog">
+    <div class="modal-dialog">
 
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Software Engineering Lead </h4>
-          </div>
-          <div class="modal-body">
-            <p>The Software Engineering Lead will work with a team of software engineers to create high quality machine learning enterprise software systems. As a lead you will take charge of large scale software architecture and enforce strong software engineering processes. </p>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Software Engineering Lead </h4>
+            </div>
+            <div class="modal-body">
+                <p>The Software Engineering Lead will work with a team of software engineers to create high quality machine learning enterprise software systems. As a lead you will take charge of large scale software architecture and enforce strong software engineering processes. </p>
 
-            <span> <br>Responsibilities </span>
-            <ul>
-                <li><p>Write code</li>
-                <li><p>Ensure the highest standard of product quality and reliability</li>
-                <li><p>Drive software development processes from the ground up</li>
-                <li><p>Take responsibility for the overall planning, execution and success of complex technical enterprise projects</li>
-                <li><p>Communicate with enterprise partners to develop requirements and to integrate software</li>
-            </ul>
+                <span> <br>Responsibilities </span>
+                <ul>
+                    <li><p>Write code</li>
+                    <li><p>Ensure the highest standard of product quality and reliability</li>
+                    <li><p>Drive software development processes from the ground up</li>
+                    <li><p>Take responsibility for the overall planning, execution and success of complex technical enterprise projects</li>
+                    <li><p>Communicate with enterprise partners to develop requirements and to integrate software</li>
+                </ul>
 
-            <span> <br>Qualifications </span>
-            <ul>
-                <li><p>Hands-on technical leadership and process management experience</li>
-                <li><p>Successfully built large-scale enterprise or mission critical products</li>
-                <li><p>Experience in leading large cutting edge, technically-challenging, cross-functional software projects from inception to delivery</li>
-            </ul>
+                <span> <br>Qualifications </span>
+                <ul>
+                    <li><p>Hands-on technical leadership and process management experience</li>
+                    <li><p>Successfully built large-scale enterprise or mission critical products</li>
+                    <li><p>Experience in leading large cutting edge, technically-challenging, cross-functional software projects from inception to delivery</li>
+                </ul>
 
-          </div>
-          <div class="modal-footer">
-            <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng?subject=Deep Software Engineering Lead"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a> 
-            <a href="#" type="button" data-dismiss="modal" class="modal-close" >Close</a>
-          </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-main btn-lg" href="mailto:joinus@deeplearni.ng?subject=Deep Software Engineering Lead"  onclick=”javascript:pageTracker._trackPageview (‘ResumeClick’);” role="button">Send your CV &raquo;</a> 
+                <a href="#" type="button" data-dismiss="modal" class="modal-close" >Close</a>
+            </div>
         </div>
     </div>
 

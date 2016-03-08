@@ -216,9 +216,9 @@
                 silentScroll(0);
 
                 //scrolling the page to the section with no animation
-                if (element.length) {
-                    $htmlBody.scrollTop(element.position().top);
-                }
+                // if (element.length) {
+                //     $htmlBody.scrollTop(element.position().top);
+                // }
             }
         };
 
@@ -869,8 +869,8 @@
                 var currentScroll = $window.scrollTop();
                 var scrollDirection = getScrollDirection(currentScroll);
                 var visibleSectionIndex = 0;
-                var screen_mid = currentScroll + ($window.height() / 2.0);
-
+                // var screen_mid = currentScroll + ($window.height() / 2.0);
+                var screen_mid = currentScroll;
                 //taking the section which is showing more content in the viewport
                 var sections =  document.querySelectorAll(SECTION_SEL);
                 for (var i = 0; i < sections.length; ++i) {
@@ -947,7 +947,7 @@
                                     isResizing = true;
                                 });
                             }
-                            scrollPage(currentSection);
+                            // scrollPage(currentSection);
 
                             requestAnimFrame(function(){
                                 isResizing = false;
